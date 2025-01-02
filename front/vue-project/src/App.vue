@@ -1,4 +1,5 @@
 <template>
+  <div class="home-page">
   <header class="navbar">
     <div class="menu-icon" @click="toggleMenu">
       <span class="line" v-bind:class="{ open: isOpen }"></span>
@@ -6,7 +7,7 @@
       <span class="line" v-bind:class="{ open: isOpen }"></span>
     </div>
 
-    <div class="logo-container">
+    <div class="logo-container" @click="closeall">
       <img class="logo" src="/logo.png" alt="Логотип" />
       <h1 class="company-name">BryakBlog</h1>
     </div>
@@ -16,7 +17,8 @@
     </div>
 
     <div :class="['dropdown', { 'slide-in': isOpen, 'slide-out': !isOpen }]">
-      <ul class="menu">
+
+      <ul class="menu-list">
         <li><button class="menu-button" @click="toggleAbout">Обо мне</button></li>
         <li><button class="menu-button" @click="toggleProjects">Проекты</button></li>
         <li><button class="menu-button" @click="toggleIdeas">Идеи</button></li>
@@ -24,18 +26,29 @@
         <li><button class="menu-button" @click="togglePhoto" >Фотографии</button></li>
         <li><button class="menu-button" @click="toggleMemes" >Приколюхи</button></li>
       </ul>
+
     </div>
+
     <div v-if="isContainerVisible" class="info-container" :style="{ width: infoWidth }">
 
-    <AboutMe v-if="showAbout" @close="showAbout = false" />
-    <Projects v-if="showProjects" @close="showProjects = false" />
-    <Ideas v-if="showIdeas" @close="showIdeas = false" />
-    <Contacts v-if="showContacts" @close="showContacts = false" />
-    <Photo v-if="showPhoto" @close="showPhoto = false" />
-    <Memes v-if="showMemes" @close="showMemes = false" />
-    <button class="close-button" @click="closeInfoContainer">✕</button>
+        <AboutMe v-if="showAbout" @close="showAbout = false" />
+        <Projects v-if="showProjects" @close="showProjects = false" />
+        <Ideas v-if="showIdeas" @close="showIdeas = false" />
+        <Contacts v-if="showContacts" @close="showContacts = false" />
+        <Photo v-if="showPhoto" @close="showPhoto = false" />
+        <Memes v-if="showMemes" @close="showMemes = false" />
+        <button class="close-button" @click="closeInfoContainer">✕</button>
+
     </div>
+
+    <div class="home-label">
+      <label>
+        Добро пожаловать!
+      </label>
+    </div>
+
   </header>
+  </div>
 </template>
 
 <script>
@@ -153,7 +166,12 @@ export default {
 
     closeInfoContainer() {
       this.isContainerVisible = false;
-    }
+    },
+
+    closeall() {
+      // this.forceUpdate();
+      location.reload();
+    },
   }
 };
 </script>

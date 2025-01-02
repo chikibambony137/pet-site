@@ -1,13 +1,26 @@
 
+body {
+  /* background-image: url(рыкачева.jpg); */
+  background-color: #181818;
+  background-size: 100%;
+}
 
-
+.home-label {
+  font-weight: 900;
+  position: absolute;
+    top:  50%;
+    right: 50%;
+    transform: translate(+50%, +100%);
+  font-size: 50px;
+  z-index: 1;
+}
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #2d2d2d;
+  background-color: #1e1e1e;
   color: white;
   position: fixed; /* Привязываем к верхней части */
   top: 0;
@@ -18,20 +31,25 @@
 
 .menu-icon {
   cursor: pointer;
-  
+  height: 45px;
+  width: 45px;
+  background-color: #282828;
+  padding: 6px 2px;
+  border-radius: 10px;
 }
 
 .line {
   display: block;
-  width: 25px;
-  height: 3px;
-  margin: 4px;
+  width: 33px;
+  height: 4px;
+  margin: 5px;
   background-color: white;
   transition: all 0.3s ease;
+  
 }
 
 .line.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(7px, 7px);
 }
 
 .line.open:nth-child(2) {
@@ -58,16 +76,17 @@
   position: absolute;
   top: 100px;
   left: 10px;
-  background-color: #2d2d2d;
+  background-color: #202020;
   border-radius: 10px;
   width: 20%;
+  z-index: 10;
 
   transform: translateX(-100%); /* Начальное положение за пределами экрана */
   transition: transform 0.5s ease; /* Параметр анимации */
   padding-bottom: 10%;
 }
 
-.menu {
+.menu-list {
   list-style: none;
   padding: 10px;
   margin: 0; /* Убираем отступы */
@@ -75,7 +94,7 @@
   text-align: center;
 }
 
-.menu li {
+.menu-list li {
   padding: 5px;
 }
 
@@ -109,13 +128,15 @@
 
 .logo-container {
   display: flex;
-  align-items: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .logo {
   width: 100px; /* Задайте размер логотипа */
   height: auto; /* Автоматическое высчитывание высоты */
   margin-right: -10px; /* Промежуток между логотипом и названием */
+  cursor: pointer;
 }
 
 .info-container {
@@ -123,26 +144,28 @@
   right: 10px;
   padding: 20px;
   position: absolute;
-  background-color: #2d2d2d;
+  background-color: #252525;
   border-radius: 10px;
   padding-bottom: 10%;
   transition: width 0.5s ease; /* Плавный переход для изменения ширины */
   min-width: 10px;
+  z-index: 10;
 }
 
 .close-button {
   position: absolute; /* Устанавливаем абсолютное позиционирование для кнопки */
-    top: 10px; /* Отступ от верхнего края */
-    right: 10px; /* Отступ от правого края */
-  height: 20px;
-  width: 20px;
-  background-color: #2d2d2d;
+    top: 13px; /* Отступ от верхнего края */
+    right: 13px; /* Отступ от правого края */
+  height: 25px;
+  width: 25px;
+  background-color: #252525;
   color: white; /* Белый цвет текста */
   border: none; /* Без рамки */
   border-radius: 4px; /* Закругленные углы */
   padding: 0px 0px; /* Внутренний отступ */
   cursor: pointer; /* Указатель при наведении */
   font-size: 14px; /* Размер шрифта */
+  font-weight: 1000;
 }
 
 .close-button:hover {
