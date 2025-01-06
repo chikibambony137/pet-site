@@ -171,3 +171,18 @@ body {
 .close-button:hover {
   background-color: #d32f2f; /* Темнее при наведении */
 }
+
+.profile-container {
+  top: 100px;
+  right: 10px;
+  padding: 20px;
+  position: absolute;
+  background-color: #252525;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #1b1b1b;
+  padding-bottom: 10%;
+  transition: width 0.5s ease; /* Плавный переход для изменения ширины */
+  min-width: 10px;
+  z-index: 11;
+}

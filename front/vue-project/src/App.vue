@@ -7,13 +7,23 @@
       <span class="line" v-bind:class="{ open: isOpen }"></span>
     </div>
 
-    <div class="logo-container" @click="closeall">
+    <div class="logo-container" @click="reloadPage">
+      <router-link to="/home">
       <img class="logo" src="/logo.png" alt="Логотип" />
+      </router-link>
       <h1 class="company-name">BryakBlog</h1>
+      
     </div>
 
-    <div class="avatar-container">
+    <div class="avatar-container" @click="openProfile">
+      <router-link to="/profile">
       <img class="avatar" src="/ava.jpg" alt="Аватар" />
+      </router-link>
+    </div>
+
+    <div v-if="isProfileContainerVisible" class="profile-container">
+      <router-view></router-view>
+      <button class="close-button" @click="closeProfileContainer">✕</button>
     </div>
 
     <div :class="['dropdown', { 'slide-in': isOpen, 'slide-out': !isOpen }]">
@@ -37,6 +47,7 @@
         <Contacts v-if="showContacts" @close="showContacts = false" />
         <Photo v-if="showPhoto" @close="showPhoto = false" />
         <Memes v-if="showMemes" @close="showMemes = false" />
+
         <button class="close-button" @click="closeInfoContainer">✕</button>
 
     </div>
@@ -77,6 +88,7 @@ export default {
       infoWidth: '75%',
 
       isContainerVisible: false,
+      isProfileContainerVisible: false,
     };
   },
   
@@ -168,10 +180,18 @@ export default {
       this.isContainerVisible = false;
     },
 
-    closeall() {
+    closeProfileContainer() {
+      this.isProfileContainerVisible = false;
+    },
+
+    reloadPage() {
       // this.forceUpdate();
       location.reload();
     },
+
+    openProfile() {
+      this.isProfileContainerVisible = !this.isProfileContainerVisible;
+    }
   }
 };
 </script>
