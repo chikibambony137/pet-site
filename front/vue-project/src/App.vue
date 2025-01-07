@@ -47,8 +47,11 @@
         <Contacts v-if="showContacts" @close="showContacts = false" />
         <Photo v-if="showPhoto" @close="showPhoto = false" />
         <Memes v-if="showMemes" @close="showMemes = false" />
+        <textarea v-if="showTextBox"></textarea>
+        <button v-if="showTextBox"></button>
 
         <button class="close-button" @click="closeInfoContainer">✕</button>
+        <button class="edit-button" @click="editInfoContainer">✏️</button>
 
     </div>
 
@@ -86,6 +89,7 @@ export default {
       showPhoto: false,
       showMemes: false,
       infoWidth: '75%',
+      showTextBox: false,
 
       isContainerVisible: false,
       isProfileContainerVisible: false,
@@ -191,7 +195,13 @@ export default {
 
     openProfile() {
       this.isProfileContainerVisible = !this.isProfileContainerVisible;
+    },
+
+    editInfoContainer() {
+      this.showTextBox = !this.showTextBox;
     }
+
+    
   }
 };
 </script>

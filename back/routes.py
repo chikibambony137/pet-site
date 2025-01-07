@@ -12,7 +12,7 @@ async def root():
 
 @router.get("/aboutme")
 async def get_aboutme(db: Session = Depends(get_db)):
-    return db.query(AboutMe).all()
+    return db.query(AboutMe).first()
 
 @router.put("/aboutme")
 async def update_aboutme(info: str, db: Session = Depends(get_db)):

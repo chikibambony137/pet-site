@@ -152,7 +152,8 @@ body {
   z-index: 10;
 }
 
-.close-button {
+.close-button,
+.edit-button {
   position: absolute; /* Устанавливаем абсолютное позиционирование для кнопки */
     top: 13px; /* Отступ от верхнего края */
     right: 13px; /* Отступ от правого края */
@@ -170,6 +171,14 @@ body {
 
 .close-button:hover {
   background-color: #d32f2f; /* Темнее при наведении */
+}
+
+.edit-button {
+    top: 45px; /* Отступ от верхнего края */
+}
+
+.edit-button:hover {
+  background-color: #34d32f; /* Темнее при наведении */
 }
 
 .profile-container {
