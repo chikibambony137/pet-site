@@ -15,6 +15,7 @@ export default {
       try {
         const response = await axios.get('http://127.0.0.1:8000/aboutme');  // Добавляем await
         this.aboutMe = response.data.text;  // Сохраняем полученные данные
+        localStorage.setItem("aboutMe", this.aboutMe)
       } catch (error) {
         alert('Ошибка при получении данных: ' + error);  // Исправляем вывод ошибки
       }

@@ -8,11 +8,10 @@
     </div>
 
     <div class="logo-container" @click="reloadPage">
-      <router-link to="/home">
-      <img class="logo" src="/logo.png" alt="Логотип" />
+      <router-link class="home-router-link" to="/home">
+      <!-- <img class="logo" src="/logo.png" alt="Логотип" /> -->
+      <h1 class="company-name">BB</h1>
       </router-link>
-      <h1 class="company-name">BryakBlog</h1>
-      
     </div>
 
     <div class="avatar-container" @click="openProfile">
@@ -47,7 +46,7 @@
         <Contacts v-if="showContacts" @close="showContacts = false" />
         <Photo v-if="showPhoto" @close="showPhoto = false" />
         <Memes v-if="showMemes" @close="showMemes = false" />
-        <textarea v-if="showTextBox"></textarea>
+        <textarea v-if="showTextBox">{{aboutMe}}</textarea>
         <button v-if="showTextBox"></button>
 
         <button class="close-button" @click="closeInfoContainer">✕</button>
@@ -90,6 +89,10 @@ export default {
       showMemes: false,
       infoWidth: '75%',
       showTextBox: false,
+
+      NewAboutMe: "",
+
+      aboutMe: localStorage.aboutMe,
 
       isContainerVisible: false,
       isProfileContainerVisible: false,

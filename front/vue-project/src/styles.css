@@ -132,6 +132,18 @@ body {
     cursor: pointer;
 }
 
+.home-router-link {
+  width: 100px;
+  text-align: center;
+  color: white;
+  background-color: #1e1e1e;
+}
+
+.home-router-link:hover {
+  color: #ff00ea;
+  background-color: #1e1e1e;
+}
+
 .logo {
   width: 100px; /* Задайте размер логотипа */
   height: auto; /* Автоматическое высчитывание высоты */
