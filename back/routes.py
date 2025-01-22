@@ -14,7 +14,7 @@ async def root():
 async def get_aboutme(db: Session = Depends(get_db)):
     return db.query(AboutMe).first()
 
-@router.put("/aboutme")
+@router.post("/aboutme/update")
 async def update_aboutme(info: str, db: Session = Depends(get_db)):
     aboutme = db.query(AboutMe).filter(AboutMe.id == 1).first()
     aboutme.text = info

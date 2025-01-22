@@ -162,6 +162,10 @@ body {
   transition: width 0.5s ease; /* Плавный переход для изменения ширины */
   min-width: 10px;
   z-index: 10;
+  
+  height: 550px;
+  overflow-y: scroll;
+  scrollbar-color: #c6c6c6 #252525;
 }
 
 .close-button,
